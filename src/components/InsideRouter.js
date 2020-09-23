@@ -5,6 +5,7 @@ import Example from "./Example";
 import "./InsideRouter.css";
 
 export function InsideRouter(props) {
+  console.log(props);
   const history = useHistory();
   const navigate = () => {
     history.push("/about", {

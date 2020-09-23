@@ -2,10 +2,14 @@ import React, { useContext } from "react";
 import { Context } from "../context";
 
 export function Home(props) {
+  console.log(props.location.state.test);
   let context = useContext(Context);
-  if (props.showText)
-    return <h1 className="home-text home-button">Home {context.showText}</h1>;
-  else return <p>Don't show</p>;
+  return (
+    <>
+      <span>{props.location.state.test}</span>
+      <button onClick={props.history.goBack}>Home {context.showText}</button>
+    </>
+  );
 }
 
 export function Test(props) {

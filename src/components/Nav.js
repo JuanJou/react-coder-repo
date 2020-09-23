@@ -21,19 +21,6 @@ export function Nav() {
       <Router>
         <Link
           to={{
-            pathname: "/about",
-            state: {
-              test: "Direct",
-            },
-          }}
-        >
-          About
-        </Link>
-        <Link to="/">Inicio</Link>
-        <Link to="/context/7">Context</Link>
-        <Link to="/other">OtherAbout</Link>
-        <Link
-          to={{
             pathname: "/home",
             state: {
               test: "Home",
@@ -42,20 +29,20 @@ export function Nav() {
         >
           Home
         </Link>
+        <Link to={" "}>Test</Link>
         <Switch>
           <Route
             className={styles.test}
-            path="/"
+            path="/home"
             exact
-            component={HomeWithLog}
+            component={Home}
           ></Route>
-          <Route path="/about" component={About}></Route>
-          <Route path="/home" component={InsideRouter}></Route>
           <Route
-            path="/context/:id"
-            render={() => <ContextWithReducer />}
+            className={styles.test}
+            path="/test"
+            exact
+            component={Home}
           ></Route>
-          <Route path="/other" component={OtherAbout}></Route>
         </Switch>
       </Router>
     </nav>

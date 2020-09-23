@@ -12,6 +12,7 @@ function About({
   }, []);
   return (
     <div>
+      <span>About</span>
       {todos.map((todo) => (
         <span key={todo.id}>{todo.description}</span>
       ))}
